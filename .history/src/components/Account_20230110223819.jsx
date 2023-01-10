@@ -39,7 +39,7 @@ const Account = ({ session }) => {
     }
   };
   const updateProfile = async (e) => {
-    await e.preventDefault();
+    e.preventDefault();
 
     try {
       setLoading(true);

@@ -38,8 +38,8 @@ const Account = ({ session }) => {
       setLoading(false);
     }
   };
-  const updateProfile = async (e) => {
-    await e.preventDefault();
+  const updateProfile = async (eve) => {
+    e.preventDefault();
 
     try {
       setLoading(true);

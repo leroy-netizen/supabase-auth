@@ -10,7 +10,7 @@ const Avatar = ({ url, size, onUpload }) => {
     if (url) downloadImage(url);
   }, [url]);
 
-  const downloadImage = async (path) => {
+  const downloadImage = async () => {
     try {
       const { error, data } = await supabase.storage
         .from("avatars")

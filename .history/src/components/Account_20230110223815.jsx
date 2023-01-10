@@ -39,7 +39,7 @@ const Account = ({ session }) => {
     }
   };
   const updateProfile = async (e) => {
-    await e.preventDefault();
+    e.preventDefault();
 
     try {
       setLoading(true);
@@ -89,20 +89,12 @@ const Account = ({ session }) => {
               onChange={(e) => setWebsite(e.target.value)}
             />
           </div>
-
-          <Avatar
-            url={avatar_url}
-            size={150}
-            onUpload={(url) => {
-              setAvatarUrl(url);
-              updateProfile({ username, website, avatar_url: url });
-            }}
-          />
           <div>
             <button className="button primary block" disabled={loading}>
               Update profile
             </button>
           </div>
+
         </form>
       )}
       <button

@@ -4,13 +4,13 @@ import { supabase } from "../utils/supabaseClient";
 
 const Avatar = ({ url, size, onUpload }) => {
   const [avatarUrl, setAvatarUrl] = useState(null);
-  const[uploading, setUploading] = useState(false);
+  const[(uploading, setUploadin)] = useState(false);
 
   useEffect(() => {
     if (url) downloadImage(url);
   }, [url]);
 
-  const downloadImage = async (path) => {
+  const downloadImage = async () => {
     try {
       const { error, data } = await supabase.storage
         .from("avatars")

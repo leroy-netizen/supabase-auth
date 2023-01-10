@@ -2,7 +2,7 @@ import { supabase } from "../utils/supabaseClient";
 import { useState, useEffect } from "react";
 import Avatar from "./Avatar";
 
-const Account = ({ session }) => {
+const Account = ({session}) => {
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState(null);
   const [website, setWebsite] = useState(null);
@@ -39,7 +39,7 @@ const Account = ({ session }) => {
     }
   };
   const updateProfile = async (e) => {
-    await e.preventDefault();
+    e.preventDefault();
 
     try {
       setLoading(true);
@@ -89,15 +89,6 @@ const Account = ({ session }) => {
               onChange={(e) => setWebsite(e.target.value)}
             />
           </div>
-
-          <Avatar
-            url={avatar_url}
-            size={150}
-            onUpload={(url) => {
-              setAvatarUrl(url);
-              updateProfile({ username, website, avatar_url: url });
-            }}
-          />
           <div>
             <button className="button primary block" disabled={loading}>
               Update profile
