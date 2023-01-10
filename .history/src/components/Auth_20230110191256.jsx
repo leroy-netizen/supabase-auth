@@ -25,7 +25,7 @@ const Auth = () => {
   return (
     <div className="row flex-center flex">
       <div className="col-6 form-widget" aria-live="polite">
-        <h1 className="header">Supabase Passwordless Login</h1>
+        <h1 className="header">Supabase passwordless Login</h1>
         <p className="description">Sign in with your email below</p>
         {loading ? (
           "Sending magic link..."
